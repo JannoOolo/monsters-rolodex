@@ -1,14 +1,21 @@
 import logo from './logo.svg';
+import { Component } from 'react/cjs/react.production.min';
 import './App.css';
 
-function App() {
-  return (
+class App extends Component{
+  constructor(){
+    super( );
+    this.state ={
+      string: 'HEllo Janno'
+    };
+  }
+  render(){
+    return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <p>{ this.state.string }</p>
+        <button onClick={()=>this.setState({string:'hello Oolo'})}>Change text</button>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -19,7 +26,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )}
 }
 
 export default App;
